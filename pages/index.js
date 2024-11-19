@@ -5,6 +5,7 @@ import {
 	getStoryblokApi,
 	StoryblokComponent,
 } from "@storyblok/react";
+import Layout from "../components/Layout";
 
 export default function Home({ story }) {
 	story = useStoryblokState(story);
@@ -15,11 +16,10 @@ export default function Home({ story }) {
 				<title>Create Next App</title>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<header>
-				<h1>{story ? story.name : "My Site"}</h1>
-			</header>
 
-			<StoryblokComponent blok={story.content} />
+			<Layout>
+				<StoryblokComponent blok={story.content} />
+			</Layout>
 		</div>
 	);
 }
@@ -49,8 +49,7 @@ export async function getServerSideProps(context) {
 	// get the query object
 	const insideStoryblok = context.query._storyblok;
 
-	// let slug = "home";
-	let slug = "newcontentstory";
+	let slug = "home";
 
 	let sbParams = {
 		version: "draft", // or 'draft'
