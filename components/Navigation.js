@@ -1,11 +1,16 @@
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
-const Navigation = () => {
+const Navigation = ({ locales, locale, defaultLocale }) => {
+	const router = useRouter();
 	const [openMenu, setOpenMenu] = useState(false);
+	const changeLocale = (loc) => {
+		router.push(router.asPath, router.asPath, { locale: loc });
+	};
 
 	return (
-		<div className="relative bg-white border-b-2 border-gray-100">
+		<div className="relative bg-white border-b-2 border-gray-100 z-20">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6">
 				<div className="flex justify-between items-center  py-6 md:justify-start md:space-x-10">
 					<div className="flex justify-start lg:w-0 lg:flex-1">
@@ -67,10 +72,20 @@ const Navigation = () => {
 								Intershop
 							</a>
 						</Link>
+						{locales.map((loc) => (
+							<span
+								key={loc}
+								onClick={() => changeLocale(loc)}
+								className={`block px-4 py-1 md:p-2 rounded-lg lg:px-4 cursor-pointer ${
+									locale === loc ? "bg-black text-white" : ""
+								}`}
+							>
+								{loc}
+							</span>
+						))}
 					</div>
 				</div>
 			</div>
-
 			{/* <!--
         Mobile menu, show/hide based on mobile menu state.
       --> */}
@@ -137,6 +152,17 @@ const Navigation = () => {
 											</span>
 										</a>
 									</Link>
+									{locales.map((loc) => (
+										<span
+											key={loc}
+											onClick={() => changeLocale(loc)}
+											className={`block px-4 py-1 md:p-2 rounded-lg lg:px-4 cursor-pointer ${
+												locale === loc ? "bg-black text-white" : ""
+											}`}
+										>
+											{loc}
+										</span>
+									))}
 								</nav>
 							</div>
 						</div>
@@ -146,5 +172,4 @@ const Navigation = () => {
 		</div>
 	);
 };
-
 export default Navigation;

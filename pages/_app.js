@@ -6,23 +6,23 @@ import Page from "../components/Page";
 import Teaser from "../components/Teaser";
 
 const components = {
-  feature: Feature,
-  grid: Grid,
-  teaser: Teaser,
-  page: Page,
+	feature: Feature,
+	grid: Grid,
+	teaser: Teaser,
+	page: Page,
 };
 
 storyblokInit({
-  accessToken: "WM5msFai6QKivKKhor4QXwtt",
-  use: [apiPlugin],
-  components,
-  apiOptions: {
-    region: ''
-  }
+	accessToken: "WM5msFai6QKivKKhor4QXwtt",
+	use: [apiPlugin],
+	components,
+	apiOptions: {
+		region: "",
+	},
 });
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+	return <Component {...pageProps} />;
 }
 
 export default MyApp;
