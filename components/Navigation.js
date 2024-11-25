@@ -57,21 +57,27 @@ const Navigation = ({ locales, locale, defaultLocale }) => {
 						</button>
 					</div>
 					<div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0 space-x-10">
-						<Link href="/magento">
+						<Link href="/alpha">
 							<a className="text-base font-medium text-gray-500 hover:text-gray-900">
-								Magento
+								Alpha
 							</a>
 						</Link>
-						<Link href="/shopify">
+						<Link href="/beta">
 							<a className="text-base font-medium text-gray-500 hover:text-gray-900">
-								Shopify
+								Beta
 							</a>
 						</Link>
-						<Link href="/intershop">
+						<Link href="/gamma">
 							<a className="text-base font-medium text-gray-500 hover:text-gray-900">
-								Intershop
+								Gamma
 							</a>
 						</Link>
+						<Link href="/delta">
+							<a className="text-base font-medium text-gray-500 hover:text-gray-900">
+								Delta
+							</a>
+						</Link>
+						{locales.length > 0 && <span>|</span>}
 						{locales.map((loc) => (
 							<span
 								key={loc}
@@ -129,26 +135,33 @@ const Navigation = ({ locales, locale, defaultLocale }) => {
 							</div>
 							<div className="mt-6">
 								<nav className="grid gap-y-8">
-									<Link href="/about">
+									<Link href="/alpha">
 										<a className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
 											{/* <!-- Heroicon name: outline/chart-bar --> */}
 											<span className="ml-3 text-base font-medium text-gray-900">
-												About
+												Alpha
 											</span>
 										</a>
 									</Link>
-									<Link href="/blog">
+									<Link href="/beta">
 										<a className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
 											{/* <!-- Heroicon name: outline/cursor-click --> */}
 											<span className="ml-3 text-base font-medium text-gray-900">
-												Blog
+												Beta
 											</span>
 										</a>
 									</Link>
-									<Link href="/services">
+									<Link href="/gamma">
 										<a className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
 											<span className="ml-3 text-base font-medium text-gray-900">
-												Services
+												Gamma
+											</span>
+										</a>
+									</Link>
+									<Link href="/delta">
+										<a className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+											<span className="ml-3 text-base font-medium text-gray-900">
+												Delta
 											</span>
 										</a>
 									</Link>

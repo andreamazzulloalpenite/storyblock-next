@@ -39,6 +39,7 @@ export async function getStaticProps({
 	let sbParams = {
 		version: "draft", // or 'published'
 		language: locale,
+		resolve_relations: ["popular-articles.articles"],
 	};
 
 	const storyblokApi = getStoryblokApi();
