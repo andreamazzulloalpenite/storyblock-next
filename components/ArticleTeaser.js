@@ -10,6 +10,9 @@ const ArticleTeaser = ({ article }) => {
 				<h2 className="mx-auto mb-8 text-2xl font-semibold leading-none tracking-tighter text-neutral-600 lg:text-3xl">
 					{article.body[0].title}
 				</h2>
+				<h2 className="title-font sm:text-2xl text-xl mb-4 font-medium text-gray-900">
+					{article.body[0].date}
+				</h2>
 				<img
 					className="object-cover object-center w-full mb-8 lg:h-48 md:h-36 rounded-xl"
 					src={article.body[0].image.filename}

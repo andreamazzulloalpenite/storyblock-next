@@ -15,18 +15,21 @@ const Navigation = ({ locales, locale, defaultLocale }) => {
 				<div className="flex justify-between items-center  py-6 md:justify-start md:space-x-10">
 					<div className="flex justify-start lg:w-0 lg:flex-1">
 						<Link href="/">
-							<a>
-								<span className="sr-only">Storyblok</span>
+							<a className="flex justify-start items-center">
+								{/* <span className="sr-only">Storyblok</span> */}
 								<img
 									className="h-20 w-auto sm:h-10 hidden sm:block"
-									src="https://a.storyblok.com/f/88751/251x53/0d3909fe96/storyblok-primary.png"
-									alt="Storyblok"
+									src="https://a.storyblok.com/f/313876/180x180/fd09f5dd93/alpenite-icon.png"
+									alt="Alpenite"
 								/>
 								<img
 									className="h-20 w-auto sm:h-10 sm:hidden"
-									src="https://a.storyblok.com/f/88751/92x106/835caf912a/storyblok-logo.png"
-									alt="Storyblok"
+									src="https://a.storyblok.com/f/313876/180x180/fd09f5dd93/alpenite-icon.png"
+									alt="Alpenite"
 								/>
+								<h1 className="h-auto w-auto mx-auto ml-4 text-2xl font-semibold leading-none tracking-tighter text-neutral-600 lg:text-3xl">
+									Alpenite
+								</h1>
 							</a>
 						</Link>
 					</div>

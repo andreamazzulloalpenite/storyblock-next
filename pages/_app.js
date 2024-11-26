@@ -14,10 +14,10 @@ const components = {
 	grid: Grid,
 	teaser: Teaser,
 	article: Article,
-	hero: Hero,
-	page: Page,
 	"all-articles": AllArticles,
 	"popular-articles": PopularArtices,
+	hero: Hero,
+	page: Page,
 };
 
 storyblokInit({
