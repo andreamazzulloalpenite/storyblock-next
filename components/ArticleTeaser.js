@@ -1,9 +1,6 @@
 import Link from "next/link";
-import { render } from "storyblok-rich-text-react-renderer";
 
 const ArticleTeaser = ({ article }) => {
-	console.log(article);
-
 	return (
 		<div className="column feature">
 			<div className="p-6">

@@ -2,7 +2,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-const Navigation = ({ locales, locale, defaultLocale }) => {
+const Navigation = ({ locales, locale, defaultLocale, currentPath }) => {
 	const router = useRouter();
 	const [openMenu, setOpenMenu] = useState(false);
 	const changeLocale = (loc) => {
@@ -61,22 +61,38 @@ const Navigation = ({ locales, locale, defaultLocale }) => {
 					</div>
 					<div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0 space-x-10">
 						<Link href="/alpha">
-							<a className="text-base font-medium text-gray-500 hover:text-gray-900">
+							<a
+								className={`text-base font-medium text-gray-500 hover:text-gray-900 ${
+									router.asPath === "/alpha" ? "bg-black text-white" : ""
+								}`}
+							>
 								Alpha
 							</a>
 						</Link>
 						<Link href="/beta">
-							<a className="text-base font-medium text-gray-500 hover:text-gray-900">
+							<a
+								className={`text-base font-medium text-gray-500 hover:text-gray-900 ${
+									router.asPath === "/beta" ? "bg-black text-white" : ""
+								}`}
+							>
 								Beta
 							</a>
 						</Link>
 						<Link href="/gamma">
-							<a className="text-base font-medium text-gray-500 hover:text-gray-900">
+							<a
+								className={`text-base font-medium text-gray-500 hover:text-gray-900 ${
+									router.asPath === "/gamma" ? "bg-black text-white" : ""
+								}`}
+							>
 								Gamma
 							</a>
 						</Link>
 						<Link href="/delta">
-							<a className="text-base font-medium text-gray-500 hover:text-gray-900">
+							<a
+								className={`text-base font-medium text-gray-500 hover:text-gray-900 ${
+									router.asPath === "/delta" ? "bg-black text-white" : ""
+								}`}
+							>
 								Delta
 							</a>
 						</Link>

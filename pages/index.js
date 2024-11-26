@@ -15,26 +15,19 @@ export default function Home({ story, locales, locale, defaultLocale }) {
 	return (
 		<div>
 			<Head>
-				<title>Create Next App</title>
+				<title>Alpenite news</title>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
 			<Layout locales={locales} locale={locale} defaultLocale={defaultLocale}>
-				<StoryblokComponent blok={story.content} />
+				<StoryblokComponent blok={story.content} locale={locale} />
 			</Layout>
 		</div>
 	);
 }
 
-export async function getStaticProps({
-	params,
-	locales,
-	locale,
-	defaultLocale,
-}) {
+export async function getStaticProps({ locales, locale, defaultLocale }) {
 	const mainSlug = "home";
-	// let slug = params.slug ? params.slug.join("/") : mainSlug;
-	let slug = mainSlug;
 
 	let sbParams = {
 		version: "draft", // or 'published'
@@ -43,7 +36,7 @@ export async function getStaticProps({
 	};
 
 	const storyblokApi = getStoryblokApi();
-	let { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams);
+	let { data } = await storyblokApi.get(`cdn/stories/${mainSlug}`, sbParams);
 
 	return {
 		props: {

@@ -1,13 +1,6 @@
 import { storyblokEditable } from "@storyblok/react";
 
-// const Feature = ({ blok }) => (
-// 	<div className="column feature" {...storyblokEditable(blok)}>
-// 		{blok.name}
-// 	</div>
-// );
-
 const Feature = ({ blok }) => {
-	// console.log(blok);
 	return (
 		<div className="column feature" {...storyblokEditable(blok)}>
 			<div className="p-6">
