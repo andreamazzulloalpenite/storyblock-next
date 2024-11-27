@@ -27,6 +27,7 @@ export default function Home({ story, locales, locale, defaultLocale }) {
 }
 
 export async function getStaticProps({ locales, locale, defaultLocale }) {
+	// "home" è il nome del componente home (root, pagina iniziale del sito) su storyblok
 	const mainSlug = "home";
 
 	let sbParams = {
@@ -50,7 +51,7 @@ export async function getStaticProps({ locales, locale, defaultLocale }) {
 	};
 }
 
-// serve rside rendering
+// SSR serve rside rendering
 // export async function getServerSideProps(context) {
 // 	// get the query object
 // 	const insideStoryblok = context.query._storyblok;

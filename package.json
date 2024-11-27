@@ -2,7 +2,6 @@
 	"name": "next-js-ulimtate-tutorial",
 	"version": "1.0.0",
 	"description": "Next.js Storyblok Ultimate Tutorial",
-	"main": "index.js",
 	"private": true,
 	"scripts": {
 		"dev": "next dev",

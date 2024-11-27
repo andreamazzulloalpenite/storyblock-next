@@ -9,6 +9,8 @@ import Article from "../components/Article";
 import AllArticles from "../components/AllArticles";
 import PopularArtices from "../components/PopularArticles";
 
+// questi sono i componenti su Storyblok
+// [nome_component_storyblok]: [nome_componente_next]
 const components = {
 	feature: Feature,
 	grid: Grid,

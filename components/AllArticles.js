@@ -20,8 +20,12 @@ const AllArticles = (props) => {
 				language: router.locale,
 			};
 			if (currentSlug !== "") {
-				// NON funziona il filtro sulla chiamata -> filtro sul contenuto
-				options["filter_query[content][body][0][hub][equals]"] = currentSlug;
+				// call API filtering only right HUB
+				options.filter_query = {
+					hub: {
+						in: currentSlug,
+					},
+				};
 			}
 
 			const { data } = await storyblokApi.get(`cdn/stories`, options);
