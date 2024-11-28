@@ -17,6 +17,23 @@ export default function Home({ story, locales, locale, defaultLocale }) {
 			<Head>
 				<title>Alpenite news</title>
 				<link rel="icon" href="/favicon.ico" />
+				{/* Aggiunta dei file di Slick.js */}
+				<link
+					rel="stylesheet"
+					href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+				/>
+				<link
+					rel="stylesheet"
+					href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+				/>
+				<script
+					src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+					defer
+				></script>
+				<script
+					src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+					defer
+				></script>
 			</Head>
 
 			<Layout locales={locales} locale={locale} defaultLocale={defaultLocale}>
@@ -33,7 +50,8 @@ export async function getStaticProps({ locales, locale, defaultLocale }) {
 	let sbParams = {
 		version: "draft", // or 'published'
 		language: locale,
-		resolve_relations: ["popular-articles.articles"],
+		// it needs to assign relationship between articles and components "popular-articles"
+		resolve_relations: ["popular-articles.articles", "slider.articles"],
 	};
 
 	const storyblokApi = getStoryblokApi();

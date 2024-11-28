@@ -8,6 +8,7 @@ import Hero from "../components/Hero";
 import Article from "../components/Article";
 import AllArticles from "../components/AllArticles";
 import PopularArtices from "../components/PopularArticles";
+import Slider from "../components/Slider";
 
 // questi sono i componenti su Storyblok
 // [nome_component_storyblok]: [nome_componente_next]
@@ -20,6 +21,7 @@ const components = {
 	"popular-articles": PopularArtices,
 	hero: Hero,
 	page: Page,
+	slider: Slider,
 };
 
 storyblokInit({
